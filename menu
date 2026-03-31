@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
+
+source "lib/config.sh"
+source "lib/functions.sh"
+
+# Check Android storage permissions
+# check_android_storage
+
+createEnv
+
+while true; do
+  clear
+  # Check for artist/album inconsistencies
+  found=$(sqlite3 "$DB_FULL_PATH" "
+      SELECT 1
+      FROM tracks
+      WHERE artist IS NOT NULL AND album IS NOT NULL
+      GROUP BY playlist_id
+      HAVING COUNT(DISTINCT artist) > 1 OR COUNT(DISTINCT album) > 1
+      LIMIT 1;
+  ")
+
+  # Highlight normalization line in red if inconsistencies found
+  if [[ "$found" == "1" ]]; then
+    normalize_line="${RED}2) Normalize playlist artist/album metadata (inconsistencies found)${RESET}"
+  else
+    normalize_line="${GREEN}2)${RESET} Normalize playlist artist/album metadata"
+  fi
+
+  echo -e "${CYAN}=== YouTube Music Playlist Manager ===${RESET}"
+  echo -e "${GREEN}1)${RESET} Fetch and update playlist metadata"
+  echo -e "$normalize_line"
+  echo -e "${GREEN}3)${RESET} Download tracks with metadata tagging"
+  echo -e "${GREEN}4)${RESET} Show album/track metadata"
+  echo -e "${GREEN}5)${RESET} Reset Album"
+  echo -e "${GREEN}6)${RESET} Database Functions"
+  echo -e "${GREEN}0)${RESET} Exit"
+  echo
+  read -p "Choose an option: " option
+
+  case "$option" in
+    1)
+      clear
+      echo -e "${CYAN}=== Fetch and Update Playlist Metadata ===${RESET}"
+      echo
+      
+      # Check if plist.txt has any non-empty, non-comment lines
+      playlist_count=$(grep -v '^[[:space:]]*$' "ytdata/plist.txt" 2>/dev/null | grep -v '^[[:space:]]*#' | wc -l)
+      
+      if [[ "$playlist_count" -eq 0 ]]; then
+        echo -e "${RED}No available playlists${RESET}"
+#        echo "Please add playlist URLs or IDs to ytdata/plist.txt"
+      else
+        ./get-metadata.sh -f ytdata/plist.txt
+      fi
+      
+      echo
+#      sleep 3
+      #read -rp "Press Enter to continue..."
+      ;;
+
+    2)
+      clear
+      echo -e "${CYAN}=== Normalize Playlist Artist/Album ===${RESET}"
+      echo
+      ./normalize.sh
+      echo
+      sleep 3
+      #read -rp "Press Enter to continue..."
+      ;;
+
+    3)
+      clear
+      echo -e "${CYAN}=== Download Tracks ===${RESET}"
+      echo
+      ./download.sh
+      echo
+#      echo "Process Complete"
+        sleep 3
+      ;;
+
+    4)
+      clear
+      echo -e "${CYAN}=== Show Album/Track Metadata ===${RESET}"
+      echo
+      ./scan-metadata.sh
+      echo
+      read -rp "Press Enter to continue..."
+      ;;
+
+    5)
+      clear
+      echo -e "${CYAN}=== Reset Album ===${RESET}"
+      echo
+      ./reset-album.sh
+      ;;
+
+    6)
+      clear
+      echo -e "${BLUE}Database Functions${RESET}"
+      echo
+      ./database-functions.sh
+      ;;
+
+    0)
+      echo -e "${YELLOW}Exiting...${RESET}"
+      break
+      ;;
+
+    *)
+      echo -e "${RED}Invalid option. Please choose between 0 and 6.${RESET}"
+      sleep 3
+      ;;
+  esac
+done

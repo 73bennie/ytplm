@@ -1,0 +1,63 @@
+[DEBUG] Fetching playlist metadata for: https://music.youtube.com/playlist?list=OLAK5uy_kKisVJMcbhLEgrDw4ixoyr3lwB0-YBu9M
+WARNING: [youtube:tab] YouTube Music is not directly supported. Redirecting to https://www.youtube.com/playlist?list=OLAK5uy_kKisVJMcbhLEgrDw4ixoyr3lwB0-YBu9M
+[youtube] Extracting URL: https://music.youtube.com/watch?v=P3pTIAed1sA
+[youtube] P3pTIAed1sA: Downloading webpage
+[youtube] P3pTIAed1sA: Downloading android vr player API JSON
+[info] P3pTIAed1sA: Downloading 1 format(s): 251
+[download] Destination: /home/mrthingfish/storage/shared/Music/Grateful Dead/Spring 1990_ So Glad You Made It/06 - Loser (Live at the Knickerbocker Arena, Albany, NY, March 24, 1990).webm
+[download]   0.0% of    6.95MiB at  Unknown B/s ETA Unknown[download]   0.0% of    6.95MiB at  Unknown B/s ETA Unknown[download]   0.1% of    6.95MiB at  Unknown B/s ETA Unknown[download]   0.2% of    6.95MiB at  Unknown B/s ETA Unknown[download]   0.4% of    6.95MiB at   27.44MiB/s ETA 00:00  [download]   0.9% of    6.95MiB at    5.88MiB/s ETA 00:01[download]   1.8% of    6.95MiB at    6.71MiB/s ETA 00:01[download]   3.6% of    6.95MiB at    6.35MiB/s ETA 00:01[download]   7.2% of    6.95MiB at    8.16MiB/s ETA 00:00[download]  14.4% of    6.95MiB at    9.58MiB/s ETA 00:00[download]  28.7% of    6.95MiB at    6.11MiB/s ETA 00:00[download]  57.5% of    6.95MiB at    8.91MiB/s ETA 00:00[download] 100.0% of    6.95MiB at   11.69MiB/s ETA 00:00[download] 100% of    6.95MiB in 00:00:00 at 8.03MiB/s   
+[ExtractAudio] Destination: /home/mrthingfish/storage/shared/Music/Grateful Dead/Spring 1990_ So Glad You Made It/06 - Loser (Live at the Knickerbocker Arena, Albany, NY, March 24, 1990).opus
+Deleting original file /home/mrthingfish/storage/shared/Music/Grateful Dead/Spring 1990_ So Glad You Made It/06 - Loser (Live at the Knickerbocker Arena, Albany, NY, March 24, 1990).webm (pass -k to keep)
+[generic] Extracting URL: https://music.youtube.com/watch?v=
+[generic] watch?v=: Downloading webpage
+
+ERROR: Interrupted by user
+[youtube] Extracting URL: https://music.youtube.com/watch?v=4u-P90H7Ov8
+[youtube] 4u-P90H7Ov8: Downloading webpage
+
+ERROR: Interrupted by user
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/bin/yt-dlp/__main__.py", line 14, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/__init__.py", line 17, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/cookies.py", line 33, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/minicurses.py", line 4, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/utils/__init__.py", line 8, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/utils/traversal.py", line 14, in <module>
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1322, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1262, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1528, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1502, in _get_spec
+  File "<frozen zipimport>", line 111, in find_spec
+  File "<frozen importlib._bootstrap>", line 675, in spec_from_loader
+  File "<frozen importlib._bootstrap_external>", line 822, in spec_from_file_location
+  File "<frozen zipimport>", line 170, in get_filename
+  File "<frozen zipimport>", line 708, in _get_module_code
+  File "<frozen zipimport>", line 637, in _compile_source
+KeyboardInterrupt
+[youtube] Extracting URL: https://music.youtube.com/watch?v=x4giY0IdWXY
+[youtube] x4giY0IdWXY: Downloading webpage
+[youtube] x4giY0IdWXY: Downloading android vr player API JSON
+[info] x4giY0IdWXY: Downloading 1 format(s): 251
+[download] Destination: /home/mrthingfish/storage/shared/Music/Grateful Dead/Spring 1990_ So Glad You Made It/07 - It's All over Now (Live at the Civic Center, Hartford, CT, March 19, 1990).webm
+[download]   0.0% of    6.91MiB at  Unknown B/s ETA Unknown[download]   0.0% of    6.91MiB at  Unknown B/s ETA Unknown[download]   0.1% of    6.91MiB at  Unknown B/s ETA Unknown[download]   0.2% of    6.91MiB at  Unknown B/s ETA Unknown[download]   0.4% of    6.91MiB at   25.31MiB/s ETA 00:00  [download]   0.9% of    6.91MiB at    5.93MiB/s ETA 00:01[download]   1.8% of    6.91MiB at    6.37MiB/s ETA 00:01[download]   3.6% of    6.91MiB at    7.97MiB/s ETA 00:00[download]   7.2% of    6.91MiB at    9.27MiB/s ETA 00:00[download]  14.5% of    6.91MiB at    9.97MiB/s ETA 00:00[download]  28.9% of    6.91MiB at    8.50MiB/s ETA 00:00[download]  57.9% of    6.91MiB at   13.11MiB/s ETA 00:00[download] 100.0% of    6.91MiB at   16.21MiB/s ETA 00:00[download] 100% of    6.91MiB in 00:00:00 at 9.97MiB/s   
+[ExtractAudio] Destination: /home/mrthingfish/storage/shared/Music/Grateful Dead/Spring 1990_ So Glad You Made It/07 - It's All over Now (Live at the Civic Center, Hartford, CT, March 19, 1990).opus
+Deleting original file /home/mrthingfish/storage/shared/Music/Grateful Dead/Spring 1990_ So Glad You Made It/07 - It's All over Now (Live at the Civic Center, Hartford, CT, March 19, 1990).webm (pass -k to keep)
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/bin/yt-dlp/__main__.py", line 14, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/__init__.py", line 73, in <module>
+  File "/usr/local/bin/yt-dlp/yt_dlp/YoutubeDL.py", line 27, in <module>
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1322, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1262, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1528, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1502, in _get_spec
+  File "<frozen zipimport>", line 111, in find_spec
+  File "<frozen importlib._bootstrap>", line 675, in spec_from_loader
+  File "<frozen importlib._bootstrap_external>", line 838, in spec_from_file_location
+  File "<frozen importlib._bootstrap>", line 599, in __init__
+KeyboardInterrupt
